@@ -11,7 +11,7 @@ class DynamicValue<T> {
     
     typealias CompletionHandler = ((T) -> Void)
     
-    var value : T {
+    var value: T {
         didSet {
             self.notify()
         }

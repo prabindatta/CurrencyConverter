@@ -26,11 +26,9 @@ class RequestHandler {
                         }
                         
                         completion(.success(newModel))
-                        break
                     case .failure(let error) :
                         print("Network error \(error)")
                         completion(.failure(.network(string: "Network error " + error.localizedDescription)))
-                        break
                     }
                 })
                 

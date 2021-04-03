@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     let dataSource = CurrencyDataSource()
 
-    lazy var viewModel : CurrencyViewModel = {
+    lazy var viewModel: CurrencyViewModel = {
         let viewModel = CurrencyViewModel(dataSource: dataSource)
         return viewModel
     }()
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         }
 
         // add error handling example
-        self.viewModel.onErrorHandling = { [weak self] error in
+        self.viewModel.onErrorHandling = { [weak self] _ in
             // display error ?
             let controller = UIAlertController(title: "An error occured", message: "Oops, something went wrong!", preferredStyle: .alert)
             controller.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
@@ -43,4 +43,3 @@ class ViewController: UIViewController {
         self.viewModel.fetchCurrencies()
     }
 }
-

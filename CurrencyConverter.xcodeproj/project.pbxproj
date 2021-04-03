@@ -193,6 +193,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E3652A12617888100DB90C4 /* Build configuration list for PBXNativeTarget "CurrencyConverter" */;
 			buildPhases = (
+				3E57AEC72618DC1C00125BA7 /* SwiftLint */,
 				3E3652862617888000DB90C4 /* Sources */,
 				3E3652872617888000DB90C4 /* Frameworks */,
 				3E3652882617888000DB90C4 /* Resources */,
@@ -250,6 +251,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E57AEC72618DC1C00125BA7 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# TypCurrencyConverter\npwd\nif [ -f ~/Projects/iOS/.swiftlint.yml ]; then\n    if which swiftlint >/dev/null; then\n        swiftlint --no-cache --config ~/Projects/iOS/.swiftlint.yml\n    fi\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3E3652862617888000DB90C4 /* Sources */ = {

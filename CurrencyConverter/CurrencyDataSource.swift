@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-class GenericDataSource<T> : NSObject {
+class GenericDataSource<T>: NSObject {
     var data: DynamicValue<[T]> = DynamicValue([])
 }
 
-class CurrencyDataSource : GenericDataSource<ExchangeRate>, UITableViewDataSource {
+class CurrencyDataSource: GenericDataSource<ExchangeRate>, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -24,7 +24,9 @@ class CurrencyDataSource : GenericDataSource<ExchangeRate>, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as! CurrencyCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as? CurrencyCell else {
+            fatalError("CurrencyCell not found")
+        }
         
         let currencyRate = self.data.value[indexPath.row]
         cell.currencyRate = currencyRate

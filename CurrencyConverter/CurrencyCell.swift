@@ -12,7 +12,7 @@ class CurrencyCell: UITableViewCell {
     @IBOutlet private weak var currencyLabel: UILabel!
     @IBOutlet private weak var rateLabel: UILabel!
     
-    var currencyRate : ExchangeRate? {
+    var currencyRate: ExchangeRate? {
         didSet {
             
             guard let currencyRate = currencyRate else {

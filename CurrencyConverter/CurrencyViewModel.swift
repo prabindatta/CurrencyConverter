@@ -9,12 +9,12 @@ import Foundation
 
 struct CurrencyViewModel {
     
-    weak var dataSource : GenericDataSource<ExchangeRate>?
+    weak var dataSource: GenericDataSource<ExchangeRate>?
     weak var service: CurrencyServiceProtocol?
     
-    var onErrorHandling : ((ErrorResult?) -> Void)?
+    var onErrorHandling: ((ErrorResult?) -> Void)?
     
-    init(service: CurrencyServiceProtocol = CurrencyService.shared, dataSource : GenericDataSource<ExchangeRate>?) {
+    init(service: CurrencyServiceProtocol = CurrencyService.shared, dataSource: GenericDataSource<ExchangeRate>?) {
         self.dataSource = dataSource
         self.service = service
     }

@@ -7,16 +7,16 @@
 
 import Foundation
 
-protocol CurrencyServiceProtocol : class {
+protocol CurrencyServiceProtocol: class {
     func fetchConverter(_ completion: @escaping ((Result<Converter, ErrorResult>) -> Void))
 }
 
-final class CurrencyService : RequestHandler, CurrencyServiceProtocol {
+final class CurrencyService: RequestHandler, CurrencyServiceProtocol {
     
     static let shared = CurrencyService()
     
     let endpoint = "http://data.fixer.io/api/latest?access_key=<Access_Key>"
-    var task : URLSessionTask?
+    var task: URLSessionTask?
     
     func fetchConverter(_ completion: @escaping ((Result<Converter, ErrorResult>) -> Void)) {
         

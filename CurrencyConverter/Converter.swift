@@ -9,10 +9,10 @@ import Foundation
 
 struct Converter: Decodable {
     
-    let base : String
-    let date : String
+    let base: String
+    let date: String
     
-    let rates : [ExchangeRate]
+    let rates: [ExchangeRate]
     
     enum CodingKeys: String, CodingKey {
           case base, date, rates
@@ -22,7 +22,7 @@ struct Converter: Decodable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.base = try values.decode(String.self, forKey: .base)
         self.date = try values.decode(String.self, forKey: .date)
-        let dictionary = try values.decode([String : Double].self, forKey: .rates)
+        let dictionary = try values.decode([String: Double].self, forKey: .rates)
         
         self.rates = dictionary.map { key, value in
             ExchangeRate(currencyIso: key, rate: value)
@@ -32,6 +32,6 @@ struct Converter: Decodable {
 
 struct ExchangeRate {
     
-    let currencyIso : String
-    let rate : Double
+    let currencyIso: String
+    let rate: Double
 }
