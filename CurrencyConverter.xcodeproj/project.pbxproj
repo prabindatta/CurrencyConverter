@@ -269,7 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# TypCurrencyConverter\npwd\nif [ -f ~/Projects/iOS/.swiftlint.yml ]; then\n    if which swiftlint >/dev/null; then\n        swiftlint --no-cache --config ~/Projects/iOS/.swiftlint.yml\n    fi\nfi\n";
+			shellScript = "if [ -f ~/Projects/iOS/.swiftlint.yml ]; then\n    if which swiftlint >/dev/null; then\n        swiftlint --no-cache --config ~/Projects/iOS/.swiftlint.yml\n    fi\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
